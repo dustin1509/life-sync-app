@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public class RabbitMQConsumer {
 //    @RabbitListener(queues = "${dustin.rabbitmq.queue}")
     public void receivedMessage(SystemUser user) {
-        System.out.println("Received Message From RabbitMQ: " + user);
+        System.out.println("Test Received Message From RabbitMQ: " + user);
     }
 }

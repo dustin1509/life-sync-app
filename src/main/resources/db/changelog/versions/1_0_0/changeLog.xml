@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet author="Dustin" id="Add tag" context="base">
+        <tagDatabase tag="1.0.0"/>
+    </changeSet>
+
+    <changeSet id="Create table" author="Dustin" context="base">
+        <sqlFile path="scripts/create_tables.sql"
+                 relativeToChangelogFile="true"
+                 dbms="mysql"
+                 splitStatements="true"
+                 stripComments="true"/>
+        <rollback>
+            <sqlFile path="rollback_scripts/create_tables.sql"
+                     relativeToChangelogFile="true"
+                     dbms="mysql"
+                     splitStatements="true"
+                     stripComments="true"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

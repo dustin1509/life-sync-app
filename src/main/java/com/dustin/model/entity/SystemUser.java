@@ -28,7 +28,7 @@ import java.io.Serializable;
 public class SystemUser extends Audit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column
     private String username;
